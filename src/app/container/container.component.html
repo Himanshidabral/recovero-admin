@@ -1,0 +1,50 @@
+<mat-drawer-container> 
+  <mat-drawer #drawer [mode]="mode" [opened]="opened" class="drawer bg-primary">
+    <div class="logo-box bg-primary">
+      <img src="https://uploads-ssl.webflow.com/63183df38403683605a4b6f9/631895dd22cada2554572b7e_Recovero-logo%20white%20gradient.png" (click)="onClickRoomzLogo()">
+    </div>
+    <!-- <hr> -->
+    <div class="menu bg-primary">
+      <mat-list >
+        <mat-list-item *ngIf="role==1 || role==2" class="menu-item" routerLink={{dashboardRoute.url}} routerLinkActive="menu-item-active">
+          <mat-icon mat-list-icon>dashboard</mat-icon>
+          <div mat-line>Dashboard</div>
+          <div class="acṣtive-circle bg-success"></div>
+        </mat-list-item>
+        <mat-list-item class="menu-item" *ngIf="role==1" routerLink={{userRoute.url}} routerLinkActive="menu-item-active">
+          <mat-icon mat-list-icon>peoples</mat-icon>
+          <div mat-line>User List</div>
+          <div class="active-circle bg-success"></div>
+        </mat-list-item>
+        <mat-list-item *ngIf="role==1 " class="menu-item" routerLink='/billing' routerLinkActive="menu-item-active">
+          <mat-icon mat-list-icon>money</mat-icon>
+          <div mat-line>Billing</div>
+          <div class="acṣtive-circle bg-success"></div>
+        </mat-list-item>
+
+        <mat-list-item class="menu-item" *ngIf="role==1 || role==2" routerLink={{changePasswordRoute.url}} routerLinkActive="menu-item-active">
+          <mat-icon mat-list-icon>fingerprint</mat-icon>
+          <div mat-line>Change Password</div>
+          <div class="active-circle bg-success"></div>
+        </mat-list-item>
+
+        <mat-list-item class="menu-item" *ngIf="role==1 || role==2" routerLinkActive="menu-item-active" (click)="logOut()">
+          <mat-icon mat-list-icon>logout</mat-icon>
+          <div mat-line>Logout</div>
+          <div class="active-circle bg-success"></div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-drawer>
+  <mat-drawer-content class="drawer-content">
+    <!-- <mat-toolbar color="primary" class="header">
+      <button mat-icon-button *ngIf="mode==='over'" (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h2>USER LIST</h2>
+    </mat-toolbar> -->
+    <div class="drawer-content-box">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

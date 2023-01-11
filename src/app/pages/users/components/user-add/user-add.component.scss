@@ -1,0 +1,21 @@
+@import "core";
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  @include tablet-device{
+    width: 100%;
+  }
+
+  @include mobile-device{
+    width: 100%;
+  }
+  button {
+    width: 10rem;
+  }
+}
+
+.top{
+  display: flex;
+  justify-content: space-between;
+}

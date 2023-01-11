@@ -1,0 +1,20 @@
+@import "./core.theme";
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$admin-frontend-primary: mat-palette($mat-blue-grey, 800, A700, 50);
+$admin-frontend-accent: mat-palette($mat-light-green, 500, A400, 50);
+
+$admin-frontend-warn: mat-palette($mat-red);
+
+$admin-frontend-theme: mat-light-theme((color: (
+        primary: $admin-frontend-primary,
+        accent: $admin-frontend-accent,
+        warn: $admin-frontend-warn,
+      ),
+    ));
+
+@include angular-material-theme($admin-frontend-theme);
+
+@include core-theming($admin-frontend-theme);

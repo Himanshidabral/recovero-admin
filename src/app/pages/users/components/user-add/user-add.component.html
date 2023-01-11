@@ -1,0 +1,45 @@
+
+<mat-toolbar class="top">
+  <span>
+Add User
+  </span>
+  <button mat-icon-button color="warn" (click)="close()" >
+      <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar><div class="content">
+
+    <mat-card>
+      <form [formGroup]="userAdd" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="standard">
+          <mat-label>Name</mat-label>
+          <input type="text" matInput placeholder="enter name" formControlName="name" required>
+          <mat-error> {{userAdd?.controls?.['name']?.errors|validateError:'name'}} </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="standard">
+            
+            <mat-label>Email</mat-label>
+            <input type="text" matInput placeholder="enter email" formControlName="email" required>
+            <mat-error> {{userAdd?.controls?.['email']?.errors|validateError:'email'}} </mat-error>            
+          </mat-form-field>
+
+        <mat-form-field appearance="standard">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput placeholder="new password" formControlName="password" required>
+          <mat-error> {{userAdd?.controls?.['password']?.errors|validateError:'New Password'}} </mat-error>
+          <mat-error *ngIf="userAdd?.controls?.['password']?.errors?.['pattern']">
+            Password should be contain a uppercase a lowercase a special character and a number
+          </mat-error>
+           
+        </mat-form-field>
+        <mat-form-field appearance="standard">
+          <mat-label>Confirm Password</mat-label>
+          <input type="password" matInput placeholder="confirm password" formControlName="passwordConfirm" required>
+          <mat-error> Password not matched </mat-error>
+        </mat-form-field>
+        <br>
+        <button type="submit" mat-raised-button color="primary" [disabled]="userAdd.invalid"> Submit </button>
+      </form>
+    </mat-card>
+  </div>
+  

@@ -1,0 +1,71 @@
+@import "core";
+
+
+.user-image {
+  padding: 0.2rem;
+
+  img {
+    height: 5rem;
+    width: 5rem;
+  }
+}
+
+.view-btn {
+  background-color: inherit;
+  outline: none;
+  cursor: pointer;
+  // color: $info-color;
+  // border: 0.1rem solid $info-color;
+}
+
+.action {
+  button {
+    background-color: inherit;
+    outline: none;
+    border: 0.1rem solid $danger-color;
+    border-radius: 0.9rem;
+    margin-left: 1rem;
+    cursor: pointer;
+  }
+}
+
+.format-column {
+  padding: 10px;
+  margin: 5px;
+
+}
+
+.data-row {
+  position: relative;
+
+  td {
+    position: relative;
+  }
+}
+
+
+
+.table-wrapper {
+  overflow-x: auto;
+
+  table {
+    width: 1250px;
+  }
+}
+
+.filter-options {
+  right: 4%;
+  position: absolute;
+  padding: 6px;
+  border: 1px solid #757575;
+  border-radius: 6px;
+
+  span{
+    font-weight: 500;
+  }
+  select {
+    border: none;
+    outline: none;
+    background: inherit;
+  }
+}

@@ -1,0 +1,82 @@
+@import "core";
+
+
+.drawer {
+  box-sizing: border-box;
+  width: 25rem;
+  height: 100vh;
+}
+
+.drawer-content {
+  height: 100vh;
+  box-sizing: border-box;
+  // background-color: $white-color;
+  background-color:#E5E5E5;
+}
+
+.drawer-content-box {
+  box-sizing: border-box;
+  padding: 0 0 0 4px;
+  overflow-x: hidden;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 101;
+}
+
+::ng-deep .mat-drawer-inner-container {
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow: -moz-scrollbars-none;
+}
+
+.logo-box {
+  background-color: $white-12-opacity;
+  height: 6.4rem;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid $menu-bottom-border;
+
+  img {
+    height: 60px;
+    width: 90%;
+  }
+}
+
+.menu {
+  height: auto;
+  box-sizing: border-box;
+  width: 100%;
+  // margin-top:-0.9rem;
+}
+
+.menu-item {
+  cursor: pointer;
+  color: $white-color;
+  border-bottom: 1px solid $menu-bottom-border;
+}
+
+.menu-item-active {
+
+  // background-color: $white-color;
+  // color:   #757575;
+  .active-circle {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+  }
+}
+
+.loading {
+  box-sizing: border-box;
+  height: 83vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
